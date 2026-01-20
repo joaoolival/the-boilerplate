@@ -9,9 +9,9 @@ import { Button } from '@/Components/ui/button';
 const page = usePage();
 
 // SSR-compatible active route detection using Inertia's usePage
-const currentUrl = computed(() => page.url);
-const isHomeActive = computed(() => currentUrl.value === '/');
-const isBlogActive = computed(() => currentUrl.value.startsWith('/blog'));
+const currentPath = computed(() => page.url.split('?')[0]);
+const isHomeActive = computed(() => currentPath.value === '/');
+const isBlogActive = computed(() => currentPath.value.startsWith('/blog'));
 
 const user = computed(() => (page.props as any).auth?.user);
 
@@ -57,20 +57,40 @@ const closeMenu = () => {
             </Link>
 
             <!-- Desktop Links -->
-            <div class="hidden items-center gap-6 lg:flex">
+            <div class="hidden items-center gap-8 lg:flex">
                 <Link
                     href="/"
-                    class="text-sm font-medium text-gray-700 transition-colors hover:text-black"
-                    :class="{ 'font-semibold text-black': isHomeActive }"
+                    class="group relative py-1 text-sm font-medium transition-all duration-300"
+                    :class="
+                        isHomeActive
+                            ? 'text-black'
+                            : 'text-gray-500 hover:text-black'
+                    "
                 >
                     Home
+                    <span
+                        class="absolute -bottom-1 left-0 h-0.5 bg-black transition-all duration-300"
+                        :class="
+                            isHomeActive ? 'w-full' : 'w-0 group-hover:w-full'
+                        "
+                    ></span>
                 </Link>
                 <Link
                     href="/blog"
-                    class="text-sm font-medium text-gray-700 transition-colors hover:text-black"
-                    :class="{ 'font-semibold text-black': isBlogActive }"
+                    class="group relative py-1 text-sm font-medium transition-all duration-300"
+                    :class="
+                        isBlogActive
+                            ? 'text-black'
+                            : 'text-gray-500 hover:text-black'
+                    "
                 >
                     Blog
+                    <span
+                        class="absolute -bottom-1 left-0 h-0.5 bg-black transition-all duration-300"
+                        :class="
+                            isBlogActive ? 'w-full' : 'w-0 group-hover:w-full'
+                        "
+                    ></span>
                 </Link>
             </div>
 
@@ -127,15 +147,23 @@ const closeMenu = () => {
                 <div class="flex flex-col space-y-4 p-6">
                     <Link
                         href="/"
-                        class="text-base font-medium text-gray-700 transition-colors hover:text-black"
-                        :class="{ 'font-semibold text-black': isHomeActive }"
+                        class="flex items-center border-l-2 py-2 pl-4 text-base font-medium transition-all duration-300"
+                        :class="
+                            isHomeActive
+                                ? 'border-black text-black'
+                                : 'border-transparent text-gray-500 hover:text-black'
+                        "
                     >
                         Home
                     </Link>
                     <Link
                         href="/blog"
-                        class="text-base font-medium text-gray-700 transition-colors hover:text-black"
-                        :class="{ 'font-semibold text-black': isBlogActive }"
+                        class="flex items-center border-l-2 py-2 pl-4 text-base font-medium transition-all duration-300"
+                        :class="
+                            isBlogActive
+                                ? 'border-black text-black'
+                                : 'border-transparent text-gray-500 hover:text-black'
+                        "
                     >
                         Blog
                     </Link>
