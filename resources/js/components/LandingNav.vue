@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import { Link, router, usePage } from '@inertiajs/vue3';
-import { useWindowScroll } from '@vueuse/core';
+import { Link, usePage } from '@inertiajs/vue3';
 import { Menu, X } from 'lucide-vue-next';
-import { computed, onMounted, ref } from 'vue';
+import { computed, ref } from 'vue';
 
-import { Button } from '@/components/ui/button';
+import AppLogo from '@/Components/AppLogo.vue';
+import { Button } from '@/Components/ui/button';
 
 const page = usePage();
-const isBlogRoute = computed(() => page.url.startsWith('/blog'));
+
+// SSR-compatible active route detection using Inertia's usePage
+const currentUrl = computed(() => page.url);
+const isHomeActive = computed(() => currentUrl.value === '/');
+const isBlogActive = computed(() => currentUrl.value.startsWith('/blog'));
+
 const user = computed(() => (page.props as any).auth?.user);
 
-const props = withDefaults(
+withDefaults(
     defineProps<{
         solid?: boolean;
     }>(),
@@ -19,47 +24,10 @@ const props = withDefaults(
     },
 );
 
-const { y } = useWindowScroll();
 const isMobileMenuOpen = ref(false);
-const isHomePage = ref(false);
-
-onMounted(() => {
-    isHomePage.value = window.location.pathname === '/';
-});
-
-const isScrolled = computed(() => y.value > 50);
-
-const navClasses = computed(() => {
-    if (props.solid) {
-        return 'bg-primary-950 shadow-sm py-4';
-    }
-    if (isMobileMenuOpen.value) {
-        return 'bg-primary-950 shadow-sm py-4';
-    }
-    return isScrolled.value
-        ? 'bg-primary-950/90 backdrop-blur-md shadow-sm py-4'
-        : 'bg-transparent py-6';
-});
 
 const closeMenu = () => {
     isMobileMenuOpen.value = false;
-};
-
-const handleNavClick = (hash: string): void => {
-    isMobileMenuOpen.value = false;
-
-    if (isHomePage.value) {
-        const el = document.querySelector(hash) as HTMLElement | null;
-        if (!el) return;
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        if (history.pushState) {
-            history.pushState(null, '', hash);
-        } else {
-            window.location.hash = hash.replace('#', '');
-        }
-    } else {
-        router.visit('/' + hash);
-    }
 };
 </script>
 
@@ -74,7 +42,7 @@ const handleNavClick = (hash: string): void => {
     <nav
         class="fixed top-0 right-0 left-0 z-50 bg-white py-4 shadow-sm transition-all duration-300"
         role="navigation"
-        aria-label="Navegação principal"
+        aria-label="Main navigation"
     >
         <div
             class="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12"
@@ -83,13 +51,9 @@ const handleNavClick = (hash: string): void => {
             <Link
                 href="/"
                 class="flex items-center gap-2"
-                aria-label="Ir para o início"
+                aria-label="Go to home"
             >
-                <img
-                    src="/images/logo_bg_dark.svg"
-                    alt="Boilerplate"
-                    class="h-10 w-auto sm:h-12"
-                />
+                <AppLogo :show-text="false" />
             </Link>
 
             <!-- Desktop Links -->
@@ -97,14 +61,14 @@ const handleNavClick = (hash: string): void => {
                 <Link
                     href="/"
                     class="text-sm font-medium text-gray-700 transition-colors hover:text-black"
-                    :class="{ 'font-semibold text-black': !isBlogRoute }"
+                    :class="{ 'font-semibold text-black': isHomeActive }"
                 >
-                    Início
+                    Home
                 </Link>
                 <Link
                     href="/blog"
                     class="text-sm font-medium text-gray-700 transition-colors hover:text-black"
-                    :class="{ 'font-semibold text-black': isBlogRoute }"
+                    :class="{ 'font-semibold text-black': isBlogActive }"
                 >
                     Blog
                 </Link>
@@ -117,20 +81,20 @@ const handleNavClick = (hash: string): void => {
                         as-child
                         class="rounded-full bg-black text-white hover:bg-black/90"
                     >
-                        <Link href="/dashboard">Ir para a App</Link>
+                        <Link href="/dashboard">Go to App</Link>
                     </Button>
                 </template>
                 <template v-else>
                     <Link
                         href="/login"
                         class="text-sm font-medium text-gray-700 transition-colors hover:text-black"
-                        >Entrar</Link
+                        >Log in</Link
                     >
                     <Button
                         as-child
                         class="rounded-full bg-black text-white hover:bg-black/90"
                     >
-                        <Link href="/register">Registar</Link>
+                        <Link href="/register">Register</Link>
                     </Button>
                 </template>
             </div>
@@ -164,14 +128,14 @@ const handleNavClick = (hash: string): void => {
                     <Link
                         href="/"
                         class="text-base font-medium text-gray-700 transition-colors hover:text-black"
-                        :class="{ 'font-semibold text-black': !isBlogRoute }"
+                        :class="{ 'font-semibold text-black': isHomeActive }"
                     >
-                        Início
+                        Home
                     </Link>
                     <Link
                         href="/blog"
                         class="text-base font-medium text-gray-700 transition-colors hover:text-black"
-                        :class="{ 'font-semibold text-black': isBlogRoute }"
+                        :class="{ 'font-semibold text-black': isBlogActive }"
                     >
                         Blog
                     </Link>
@@ -184,20 +148,20 @@ const handleNavClick = (hash: string): void => {
                                 as-child
                                 class="w-full justify-center rounded-full bg-black text-white hover:bg-black/90"
                             >
-                                <Link href="/dashboard">Ir para a App</Link>
+                                <Link href="/dashboard">Go to App</Link>
                             </Button>
                         </template>
                         <template v-else>
                             <Link
                                 href="/login"
                                 class="text-base font-medium text-gray-700 transition-colors hover:text-black"
-                                >Entrar</Link
+                                >Log in</Link
                             >
                             <Button
                                 as-child
                                 class="w-full justify-center rounded-full bg-black text-white hover:bg-black/90"
                             >
-                                <Link href="/register">Registar</Link>
+                                <Link href="/register">Register</Link>
                             </Button>
                         </template>
                     </div>
