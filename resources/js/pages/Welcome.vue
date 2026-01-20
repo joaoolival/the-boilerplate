@@ -46,7 +46,9 @@ defineProps<{
                     class="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] bg-[size:4rem_4rem]"
                 ></div>
 
-                <div class="relative z-10 container mx-auto px-6">
+                <div
+                    class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+                >
                     <div class="mx-auto max-w-4xl text-center">
                         <Badge
                             variant="outline"
@@ -135,7 +137,7 @@ defineProps<{
 
             <!-- Features Grid -->
             <section class="relative bg-white py-32">
-                <div class="container mx-auto px-6">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="mx-auto mb-20 max-w-2xl text-center">
                         <h2
                             class="mb-4 text-4xl font-bold tracking-tight text-black sm:text-5xl"
@@ -322,7 +324,9 @@ defineProps<{
                     class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]"
                 ></div>
 
-                <div class="relative z-10 container mx-auto px-6 text-center">
+                <div
+                    class="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8"
+                >
                     <h2
                         class="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl"
                     >

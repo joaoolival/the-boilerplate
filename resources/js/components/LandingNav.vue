@@ -40,94 +40,104 @@ const closeMenu = () => {
     ></div>
 
     <nav
-        class="fixed top-0 right-0 left-0 z-50 bg-white py-4 shadow-sm transition-all duration-300"
+        class="fixed top-0 right-0 left-0 z-50 bg-white shadow-sm transition-all duration-300"
         role="navigation"
         aria-label="Main navigation"
     >
-        <div
-            class="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12"
-        >
-            <!-- Logo -->
-            <Link
-                href="/"
-                class="flex items-center gap-2"
-                aria-label="Go to home"
-            >
-                <AppLogo :show-text="false" />
-            </Link>
-
-            <!-- Desktop Links -->
-            <div class="hidden items-center gap-8 lg:flex">
-                <Link
-                    href="/"
-                    class="group relative py-1 text-sm font-medium transition-all duration-300"
-                    :class="
-                        isHomeActive
-                            ? 'text-black'
-                            : 'text-gray-500 hover:text-black'
-                    "
-                >
-                    Home
-                    <span
-                        class="absolute -bottom-1 left-0 h-0.5 bg-black transition-all duration-300"
-                        :class="
-                            isHomeActive ? 'w-full' : 'w-0 group-hover:w-full'
-                        "
-                    ></span>
-                </Link>
-                <Link
-                    href="/blog"
-                    class="group relative py-1 text-sm font-medium transition-all duration-300"
-                    :class="
-                        isBlogActive
-                            ? 'text-black'
-                            : 'text-gray-500 hover:text-black'
-                    "
-                >
-                    Blog
-                    <span
-                        class="absolute -bottom-1 left-0 h-0.5 bg-black transition-all duration-300"
-                        :class="
-                            isBlogActive ? 'w-full' : 'w-0 group-hover:w-full'
-                        "
-                    ></span>
-                </Link>
-            </div>
-
-            <!-- Auth Buttons (Desktop) -->
-            <div class="hidden items-center gap-4 lg:flex">
-                <template v-if="user">
-                    <Button
-                        as-child
-                        class="rounded-full bg-black text-white hover:bg-black/90"
-                    >
-                        <Link href="/dashboard">Go to App</Link>
-                    </Button>
-                </template>
-                <template v-else>
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo (Left) -->
+                <div class="flex flex-1 justify-start">
                     <Link
-                        href="/login"
-                        class="text-sm font-medium text-gray-700 transition-colors hover:text-black"
-                        >Log in</Link
+                        href="/"
+                        class="flex items-center gap-2"
+                        aria-label="Go to home"
                     >
-                    <Button
-                        as-child
-                        class="rounded-full bg-black text-white hover:bg-black/90"
-                    >
-                        <Link href="/register">Register</Link>
-                    </Button>
-                </template>
-            </div>
+                        <AppLogo :show-text="false" />
+                    </Link>
+                </div>
 
-            <!-- Mobile Toggle -->
-            <div class="flex items-center lg:hidden">
-                <button
-                    @click="isMobileMenuOpen = !isMobileMenuOpen"
-                    class="p-2 text-gray-700 hover:text-black"
-                >
-                    <X v-if="isMobileMenuOpen" class="h-6 w-6" />
-                    <Menu v-else class="h-6 w-6" />
-                </button>
+                <!-- Desktop Links (Center) -->
+                <div class="hidden flex-1 justify-center lg:flex">
+                    <div class="flex items-center gap-8">
+                        <Link
+                            href="/"
+                            class="group relative py-1 text-sm font-medium transition-all duration-300"
+                            :class="
+                                isHomeActive
+                                    ? 'text-black'
+                                    : 'text-gray-500 hover:text-black'
+                            "
+                        >
+                            Home
+                            <span
+                                class="absolute -bottom-1 left-0 h-0.5 bg-black transition-all duration-300"
+                                :class="
+                                    isHomeActive
+                                        ? 'w-full'
+                                        : 'w-0 group-hover:w-full'
+                                "
+                            ></span>
+                        </Link>
+                        <Link
+                            href="/blog"
+                            class="group relative py-1 text-sm font-medium transition-all duration-300"
+                            :class="
+                                isBlogActive
+                                    ? 'text-black'
+                                    : 'text-gray-500 hover:text-black'
+                            "
+                        >
+                            Blog
+                            <span
+                                class="absolute -bottom-1 left-0 h-0.5 bg-black transition-all duration-300"
+                                :class="
+                                    isBlogActive
+                                        ? 'w-full'
+                                        : 'w-0 group-hover:w-full'
+                                "
+                            ></span>
+                        </Link>
+                    </div>
+                </div>
+
+                <!-- Auth Buttons (Right) -->
+                <div class="hidden flex-1 justify-end lg:flex">
+                    <div class="flex items-center gap-4">
+                        <template v-if="user">
+                            <Button
+                                as-child
+                                class="rounded-full bg-black text-white hover:bg-black/90"
+                            >
+                                <Link href="/dashboard">Go to App</Link>
+                            </Button>
+                        </template>
+                        <template v-else>
+                            <Link
+                                href="/login"
+                                class="text-sm font-medium text-gray-700 transition-colors hover:text-black"
+                                >Log in</Link
+                            >
+                            <Button
+                                as-child
+                                class="rounded-full bg-black text-white hover:bg-black/90"
+                            >
+                                <Link href="/register">Register</Link>
+                            </Button>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="flex items-center lg:hidden">
+                    <button
+                        @click="isMobileMenuOpen = !isMobileMenuOpen"
+                        class="p-2 text-gray-700 hover:text-black"
+                    >
+                        <X v-if="isMobileMenuOpen" class="h-6 w-6" />
+                        <Menu v-else class="h-6 w-6" />
+                    </button>
+                </div>
             </div>
         </div>
 
