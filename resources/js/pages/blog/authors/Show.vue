@@ -29,7 +29,7 @@ const authorData = computed<Author>(() => {
 
 <template>
     <WebLayout solid>
-        <Head :title="`${authorData.name} - Autores | Boilerplate`">
+        <Head :title="`${authorData.name} - Authors | Boilerplate`">
             <!-- General SEO -->
             <meta
                 name="description"
@@ -83,7 +83,7 @@ const authorData = computed<Author>(() => {
                 content="Boilerplate"
                 head-key="og:site_name"
             />
-            <meta property="og:locale" content="pt_PT" head-key="og:locale" />
+            <meta property="og:locale" content="en_US" head-key="og:locale" />
 
             <!-- Twitter -->
             <meta
@@ -131,13 +131,13 @@ const authorData = computed<Author>(() => {
                     <Link
                         href="/blog"
                         class="text-slate-500 transition-colors hover:text-slate-900"
-                        >Artigos</Link
+                        >Articles</Link
                     >
                     <span class="text-slate-300">/</span>
                     <Link
                         href="/blog/authors"
                         class="text-slate-500 transition-colors hover:text-slate-900"
-                        >Autores</Link
+                        >Authors</Link
                     >
                     <span class="text-slate-300">/</span>
                     <span class="font-medium text-slate-900">{{
@@ -158,7 +158,7 @@ const authorData = computed<Author>(() => {
                             <img
                                 :src="authorData.avatar.url"
                                 :srcset="authorData.avatar.srcset"
-                                :alt="`Foto de ${authorData.name}`"
+                                :alt="`Photo of ${authorData.name}`"
                                 sizes="80px"
                                 width="80"
                                 height="80"
@@ -249,7 +249,7 @@ const authorData = computed<Author>(() => {
         <section class="pb-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h2 class="mb-8 text-2xl font-bold text-slate-900">
-                    Artigos de {{ authorData.name }}
+                    Articles by {{ authorData.name }}
                 </h2>
 
                 <div
@@ -275,16 +275,17 @@ const authorData = computed<Author>(() => {
                         <Inbox class="h-12 w-12 text-slate-400" />
                     </div>
                     <h3 class="mb-2 text-xl font-semibold text-slate-900">
-                        Sem artigos ainda
+                        No articles yet
                     </h3>
                     <p class="mb-6 text-slate-600">
-                        {{ authorData.name }} ainda não publicou nenhum artigo.
+                        {{ authorData.name }} has not published any articles
+                        yet.
                     </p>
                     <Link
                         href="/blog"
                         class="rounded-lg bg-gradient-to-r from-slate-600 to-slate-700 px-6 py-3 text-sm font-medium text-white transition-all hover:from-slate-700 hover:to-slate-800"
                     >
-                        Ver todos os artigos
+                        View all articles
                     </Link>
                 </div>
 

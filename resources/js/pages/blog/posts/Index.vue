@@ -17,7 +17,7 @@ defineProps<{
 
 const formatDate = (dateString: string | null) => {
     if (!dateString) return null;
-    return new Date(dateString).toLocaleDateString('pt-PT', {
+    return new Date(dateString).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -35,34 +35,34 @@ const readingTime = (content: string | null) => {
 <template>
     <WebLayout solid>
         <Head>
-            <title>Artigos | Boilerplate</title>
+            <title>Articles | Boilerplate</title>
             <meta
                 head-key="description"
                 name="description"
-                content="Artigos e dicas são partilhados neste blog."
+                content="Articles and tips are shared on this blog."
             />
         </Head>
 
         <div class="min-h-screen bg-slate-50 [color-scheme:light]">
             <!-- Hero Section - Clean & Compact -->
             <section class="relative overflow-hidden pt-28 pb-12 lg:pt-32">
-                <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="text-center">
                         <!-- Badge -->
                         <div class="mb-5 flex justify-center">
-                            <SectionBadge text="Artigos" />
+                            <SectionBadge text="Articles" />
                         </div>
 
                         <!-- Title -->
                         <BlogHeroTitle
-                            title="Últimas novidades do"
+                            title="Latest news from the"
                             highlighted="blog"
                         />
 
                         <p
                             class="mx-auto max-w-xl text-base font-light text-slate-500 sm:text-lg"
                         >
-                            Descubra os artigos no blog.
+                            Discover the articles in the blog.
                         </p>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ const readingTime = (content: string | null) => {
 
             <!-- Main Content -->
             <section class="pb-20">
-                <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <!-- Featured Post - Compact Card -->
                     <div v-if="posts.data.length > 0" class="mb-12">
                         <FeaturedPostCard :post="posts.data[0]" />
@@ -79,7 +79,7 @@ const readingTime = (content: string | null) => {
                     <!-- Posts Grid -->
                     <div v-if="posts.data.length > 1">
                         <h2 class="mb-6 text-lg font-semibold text-slate-800">
-                            Mais Artigos
+                            More Articles
                         </h2>
                         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             <BlogPostCard
@@ -101,17 +101,16 @@ const readingTime = (content: string | null) => {
                             <Inbox class="h-8 w-8 text-slate-500" />
                         </div>
                         <h3 class="mb-1 text-lg font-semibold text-slate-900">
-                            Ainda não há artigos
+                            No articles yet
                         </h3>
                         <p class="mb-5 text-sm text-slate-500">
-                            Estamos a preparar conteúdo incrível. Volte em
-                            breve!
+                            We are preparing amazing content. Come back soon!
                         </p>
                         <Link
                             href="/"
                             class="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-slate-800"
                         >
-                            Voltar ao início
+                            Back to home
                             <ArrowRight class="h-4 w-4" />
                         </Link>
                     </div>

@@ -38,11 +38,11 @@ const paginationMeta = computed(() => {
 <template>
     <WebLayout solid>
         <Head>
-            <title>Autores | Boilerplate</title>
+            <title>Authors | Boilerplate</title>
             <meta
                 head-key="description"
                 name="description"
-                content="Conheça os autores dos nossos artigos do blog."
+                content="Meet our blog post authors."
             />
         </Head>
 
@@ -70,26 +70,22 @@ const paginationMeta = computed(() => {
                             <Link
                                 href="/blog"
                                 class="text-slate-500 transition-colors hover:text-slate-900"
-                                >Artigos</Link
+                                >Articles</Link
                             >
                             <span class="text-slate-300">/</span>
                             <span class="font-medium text-slate-900"
-                                >Autores</span
+                                >Authors</span
                             >
                         </nav>
 
                         <!-- Title with gradient -->
-                        <BlogHeroTitle
-                            title="Conheça os nossos"
-                            highlighted="Autores"
-                        />
+                        <BlogHeroTitle title="Meet our" highlighted="Authors" />
 
                         <!-- Subtitle -->
                         <p
                             class="mx-auto max-w-lg text-lg font-light text-slate-600"
                         >
-                            Especialistas que partilham conhecimento sobre o
-                            blog.
+                            Experts who share knowledge on the blog.
                         </p>
                     </div>
                 </div>
@@ -120,16 +116,16 @@ const paginationMeta = computed(() => {
                             <Inbox class="h-12 w-12 text-slate-400" />
                         </div>
                         <h3 class="mb-2 text-xl font-semibold text-slate-900">
-                            Ainda não há autores
+                            No authors yet
                         </h3>
                         <p class="mb-6 text-slate-600">
-                            Os autores aparecerão aqui em breve.
+                            Authors will appear here soon.
                         </p>
                         <Link
                             href="/blog"
                             class="rounded-lg bg-gradient-to-r from-slate-600 to-slate-700 px-6 py-3 text-sm font-medium text-white transition-all hover:from-slate-700 hover:to-slate-800"
                         >
-                            Ver artigos
+                            View articles
                         </Link>
                     </div>
 

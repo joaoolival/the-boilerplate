@@ -46,7 +46,7 @@ const postData = computed<Post>(() => {
 
 const formatDate = (dateString: string | null) => {
     if (!dateString) return null;
-    return new Date(dateString).toLocaleDateString('pt-PT', {
+    return new Date(dateString).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -57,7 +57,7 @@ const readingTime = (content: string | null) => {
     if (!content) return '1 min read';
     const words = content.replace(/<[^>]*>/g, '').split(/\s+/).length;
     const minutes = Math.ceil(words / 200);
-    return `${minutes} min leitura`;
+    return `${minutes} min read`;
 };
 
 const copied = ref(false);
@@ -152,7 +152,7 @@ const openGallery = (url: string) => {
                 content="Boilerplate"
                 head-key="og:site_name"
             />
-            <meta property="og:locale" content="pt_PT" head-key="og:locale" />
+            <meta property="og:locale" content="en_US" head-key="og:locale" />
             <meta
                 v-if="postData.published_at"
                 property="article:published_time"
@@ -231,7 +231,7 @@ const openGallery = (url: string) => {
                             <Link
                                 href="/blog"
                                 class="transition-colors hover:text-white"
-                                >Artigos</Link
+                                >Articles</Link
                             >
                             <span class="text-white/40">/</span>
                             <Link
@@ -261,7 +261,7 @@ const openGallery = (url: string) => {
                                 class="flex items-center gap-3"
                             >
                                 <Link
-                                    :href="`/artigos/autor/${postData.author.slug}`"
+                                    :href="`/blog/author/${postData.author.slug}`"
                                     class="group flex items-center gap-3"
                                 >
                                     <div
@@ -287,7 +287,7 @@ const openGallery = (url: string) => {
                                             {{ postData.author.name }}
                                         </div>
                                         <div class="text-xs text-white/60">
-                                            Autor
+                                            Author
                                         </div>
                                     </div>
                                 </Link>
@@ -346,7 +346,7 @@ const openGallery = (url: string) => {
                     >
                         <div class="flex items-center gap-4">
                             <span class="font-semibold text-slate-900"
-                                >Partilhar artigo:</span
+                                >Share article:</span
                             >
                             <div class="flex items-center gap-2">
                                 <a
@@ -390,7 +390,7 @@ const openGallery = (url: string) => {
                                         v-if="copied"
                                         class="absolute -top-8 left-1/2 -translate-x-1/2 rounded bg-slate-900 px-2 py-1 text-xs text-white"
                                     >
-                                        Copiado!
+                                        Copied!
                                     </span>
                                 </button>
                             </div>
@@ -442,7 +442,7 @@ const openGallery = (url: string) => {
                                     <div
                                         class="text-sm font-medium text-slate-500"
                                     >
-                                        Autor
+                                        Author
                                     </div>
                                 </div>
 
@@ -511,13 +511,13 @@ const openGallery = (url: string) => {
                         >
                             <Camera class="h-4 w-4" />
                         </span>
-                        Galeria
+                        Gallery
                         <span class="ml-2 text-sm font-normal text-slate-500">
                             ({{ postData.gallery.length }}
                             {{
                                 postData.gallery.length === 1
-                                    ? 'imagem'
-                                    : 'imagens'
+                                    ? 'image'
+                                    : 'images'
                             }})
                         </span>
                     </h2>
@@ -561,7 +561,7 @@ const openGallery = (url: string) => {
                         <ArrowLeft
                             class="h-4 w-4 transition-transform group-hover:-translate-x-1"
                         />
-                        <span>Voltar aos artigos</span>
+                        <span>Back to articles</span>
                     </Link>
                 </div>
             </div>

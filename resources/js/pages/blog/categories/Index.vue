@@ -40,11 +40,11 @@ const paginationMeta = computed(() => {
 <template>
     <WebLayout solid>
         <Head>
-            <title>Categorias | Boilerplate</title>
+            <title>Categories | Boilerplate</title>
             <meta
                 head-key="description"
                 name="description"
-                content="Explore as categorias dos nossos artigos do blog."
+                content="Explore our blog post categories."
             />
         </Head>
 
@@ -72,25 +72,25 @@ const paginationMeta = computed(() => {
                             <Link
                                 href="/blog"
                                 class="text-slate-500 transition-colors hover:text-slate-900"
-                                >Artigos</Link
+                                >Articles</Link
                             >
                             <span class="text-slate-300">/</span>
                             <span class="font-medium text-slate-900"
-                                >Categorias</span
+                                >Categories</span
                             >
                         </nav>
 
                         <!-- Title with gradient -->
                         <BlogHeroTitle
-                            title="Explore as"
-                            highlighted="Categorias"
+                            title="Explore the"
+                            highlighted="Categories"
                         />
 
                         <!-- Subtitle -->
                         <p
                             class="mx-auto max-w-lg text-lg font-light text-slate-600"
                         >
-                            Artigos organizados por temas e áreas de interesse.
+                            Articles organized by themes and areas of interest.
                         </p>
                     </div>
                 </div>
@@ -121,16 +121,16 @@ const paginationMeta = computed(() => {
                             <Inbox class="h-12 w-12 text-slate-400" />
                         </div>
                         <h3 class="mb-2 text-xl font-semibold text-slate-900">
-                            Ainda não há categorias
+                            No categories yet
                         </h3>
                         <p class="mb-6 text-slate-600">
-                            As categorias aparecerão aqui em breve.
+                            Categories will appear here soon.
                         </p>
                         <Link
                             href="/blog"
                             class="rounded-lg bg-gradient-to-r from-slate-600 to-slate-700 px-6 py-3 text-sm font-medium text-white transition-all hover:from-slate-700 hover:to-slate-800"
                         >
-                            Ver artigos
+                            View articles
                         </Link>
                     </div>
 
