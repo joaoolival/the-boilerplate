@@ -5,7 +5,7 @@ A modern, production-ready Laravel boilerplate with Vue 3, Tailwind CSS 4, and S
 ![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat-square&logo=laravel&logoColor=white)
 ![Vue](https://img.shields.io/badge/Vue-3-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat-square&logo=php&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=flat-square&logo=php&logoColor=white)
 
 ## ✨ Features
 
@@ -102,7 +102,7 @@ A modern, production-ready Laravel boilerplate with Vue 3, Tailwind CSS 4, and S
 
 ## 📋 Requirements
 
-- **PHP** >= 8.2
+- **PHP** >= 8.4
 - **Node.js** >= 18
 - **Docker** (for Laravel Sail)
 - **Composer** >= 2.x
