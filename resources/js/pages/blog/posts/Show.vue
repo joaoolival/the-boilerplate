@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LinkedinIcon from '@/Components/icons/LinkedinIcon.vue';
+import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
 
 import {
     Dialog,
@@ -7,8 +7,8 @@ import {
     DialogContent,
     DialogDescription,
     DialogTitle,
-} from '@/Components/ui/dialog';
-import WebLayout from '@/Layouts/WebLayout.vue';
+} from '@/components/ui/dialog';
+import WebLayout from '@/layouts/WebLayout.vue';
 import { Head, Link, usePage } from '@inertiajs/vue3';
 import {
     ArrowLeft,

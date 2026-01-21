@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import BlogHeroTitle from '@/Components/blog/BlogHeroTitle.vue';
-import BlogPostCard from '@/Components/blog/BlogPostCard.vue';
-import FeaturedPostCard from '@/Components/blog/FeaturedPostCard.vue';
-import Pagination from '@/Components/Pagination.vue';
-import SectionBadge from '@/Components/SectionBadge.vue';
-import WebLayout from '@/Layouts/WebLayout.vue';
+import BlogHeroTitle from '@/components/blog/BlogHeroTitle.vue';
+import BlogPostCard from '@/components/blog/BlogPostCard.vue';
+import FeaturedPostCard from '@/components/blog/FeaturedPostCard.vue';
+import Pagination from '@/components/Pagination.vue';
+import SectionBadge from '@/components/SectionBadge.vue';
+import WebLayout from '@/layouts/WebLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ArrowRight, Inbox } from 'lucide-vue-next';
 

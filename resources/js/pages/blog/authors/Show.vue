@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import BlogPostCard from '@/Components/blog/BlogPostCard.vue';
-import LinkedinIcon from '@/Components/icons/LinkedinIcon.vue';
-import Pagination from '@/Components/Pagination.vue';
-import WebLayout from '@/Layouts/WebLayout.vue';
+import BlogPostCard from '@/components/blog/BlogPostCard.vue';
+import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
+import Pagination from '@/components/Pagination.vue';
+import WebLayout from '@/layouts/WebLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { Inbox } from 'lucide-vue-next';
 import { computed } from 'vue';

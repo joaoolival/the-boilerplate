@@ -3,8 +3,8 @@ import { Link, usePage } from '@inertiajs/vue3';
 import { Menu, X } from 'lucide-vue-next';
 import { computed, ref } from 'vue';
 
-import AppLogo from '@/Components/AppLogo.vue';
-import { Button } from '@/Components/ui/button';
+import AppLogo from '@/components/AppLogo.vue';
+import { Button } from '@/components/ui/button';
 
 const page = usePage();
 

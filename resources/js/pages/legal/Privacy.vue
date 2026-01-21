@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WebLayout from '@/Layouts/WebLayout.vue';
+import WebLayout from '@/layouts/WebLayout.vue';
 import { Head } from '@inertiajs/vue3';
 </script>
 

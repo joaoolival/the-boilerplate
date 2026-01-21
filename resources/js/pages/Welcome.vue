@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import LandingNav from '@/Components/LandingNav.vue';
-import { Badge } from '@/Components/ui/badge';
-import { Button } from '@/Components/ui/button';
+import LandingNav from '@/components/LandingNav.vue';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from '@/Components/ui/card';
-import WebLayout from '@/Layouts/WebLayout.vue';
+} from '@/components/ui/card';
+import WebLayout from '@/layouts/WebLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import {
     ArrowRight,

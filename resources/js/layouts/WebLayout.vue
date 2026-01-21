@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import LandingFooter from '@/Components/LandingFooter.vue';
-import LandingNav from '@/Components/LandingNav.vue';
-import SeoHead from '@/Components/SeoHead.vue';
+import LandingFooter from '@/components/LandingFooter.vue';
+import LandingNav from '@/components/LandingNav.vue';
+import SeoHead from '@/components/SeoHead.vue';
 
 withDefaults(
     defineProps<{
