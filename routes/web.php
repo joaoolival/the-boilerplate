@@ -24,8 +24,8 @@ Route::prefix('blog')->name('blog.')->group(function () {
 });
 
 // Legal pages
-Route::get('/terms', fn() => Inertia::render('legal/Terms'))->name('terms');
-Route::get('/privacy', fn() => Inertia::render('legal/Privacy'))->name('privacy');
-Route::get('/cookies', fn() => Inertia::render('legal/Cookies'))->name('cookies');
+Route::get('/terms', fn () => Inertia::render('legal/Terms'))->name('terms');
+Route::get('/privacy', fn () => Inertia::render('legal/Privacy'))->name('privacy');
+Route::get('/cookies', fn () => Inertia::render('legal/Cookies'))->name('cookies');
 
-require __DIR__ . '/settings.php';
+require __DIR__.'/settings.php';
