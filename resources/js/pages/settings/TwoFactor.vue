@@ -3,14 +3,14 @@ import { Form, Head } from '@inertiajs/vue3';
 import { ShieldBan, ShieldCheck } from 'lucide-vue-next';
 import { onUnmounted, ref } from 'vue';
 
-import HeadingSmall from '@/components/HeadingSmall.vue';
-import TwoFactorRecoveryCodes from '@/components/TwoFactorRecoveryCodes.vue';
-import TwoFactorSetupModal from '@/components/TwoFactorSetupModal.vue';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import HeadingSmall from '@/Components/HeadingSmall.vue';
+import TwoFactorRecoveryCodes from '@/Components/TwoFactorRecoveryCodes.vue';
+import TwoFactorSetupModal from '@/Components/TwoFactorSetupModal.vue';
+import { Badge } from '@/Components/ui/badge';
+import { Button } from '@/Components/ui/button';
 import { useTwoFactorAuth } from '@/composables/useTwoFactorAuth';
-import AppLayout from '@/layouts/AppLayout.vue';
-import SettingsLayout from '@/layouts/settings/Layout.vue';
+import AppLayout from '@/Layouts/AppLayout.vue';
+import SettingsLayout from '@/Layouts/settings/Layout.vue';
 import { disable, enable, show } from '@/routes/two-factor';
 import { BreadcrumbItem } from '@/types';
 

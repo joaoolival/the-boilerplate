@@ -2,15 +2,15 @@
 import { Form, Head } from '@inertiajs/vue3';
 import { computed, ref } from 'vue';
 
-import InputError from '@/components/InputError.vue';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import InputError from '@/Components/InputError.vue';
+import { Button } from '@/Components/ui/button';
+import { Input } from '@/Components/ui/input';
 import {
     InputOTP,
     InputOTPGroup,
     InputOTPSlot,
-} from '@/components/ui/input-otp';
-import AuthLayout from '@/layouts/AuthLayout.vue';
+} from '@/Components/ui/input-otp';
+import AuthLayout from '@/Layouts/AuthLayout.vue';
 import { store } from '@/routes/two-factor/login';
 
 interface AuthConfigContent {

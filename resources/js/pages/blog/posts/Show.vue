@@ -16,15 +16,15 @@ import {
     XIcon,
 } from 'vue3-simple-icons';
 
-import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
+import LinkedinIcon from '@/Components/icons/LinkedinIcon.vue';
 import {
     Dialog,
     DialogClose,
     DialogContent,
     DialogDescription,
     DialogTitle,
-} from '@/components/ui/dialog';
-import WebLayout from '@/layouts/WebLayout.vue';
+} from '@/Components/ui/dialog';
+import WebLayout from '@/Layouts/WebLayout.vue';
 
 import type { Post } from '@/types/models';
 

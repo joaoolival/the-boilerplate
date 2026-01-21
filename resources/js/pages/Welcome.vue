@@ -11,17 +11,17 @@ import {
     Zap,
 } from 'lucide-vue-next';
 
-import LandingNav from '@/components/LandingNav.vue';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import LandingNav from '@/Components/LandingNav.vue';
+import { Badge } from '@/Components/ui/badge';
+import { Button } from '@/Components/ui/button';
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from '@/components/ui/card';
-import WebLayout from '@/layouts/WebLayout.vue';
+} from '@/Components/ui/card';
+import WebLayout from '@/Layouts/WebLayout.vue';
 
 defineProps<{
     canLogin?: boolean;

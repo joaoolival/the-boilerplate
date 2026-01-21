@@ -3,10 +3,10 @@ import { Head, Link } from '@inertiajs/vue3';
 import { Inbox } from 'lucide-vue-next';
 import { computed } from 'vue';
 
-import AuthorCard from '@/components/blog/AuthorCard.vue';
-import BlogHeroTitle from '@/components/blog/BlogHeroTitle.vue';
-import Pagination from '@/components/Pagination.vue';
-import WebLayout from '@/layouts/WebLayout.vue';
+import AuthorCard from '@/Components/blog/AuthorCard.vue';
+import BlogHeroTitle from '@/Components/blog/BlogHeroTitle.vue';
+import Pagination from '@/Components/Pagination.vue';
+import WebLayout from '@/Layouts/WebLayout.vue';
 import type { PaginatedCollection } from '@/types/pagination';
 
 import type { Author } from '@/types/models';

@@ -2,12 +2,12 @@
 import { Form, Head } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
-import InputError from '@/components/InputError.vue';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Spinner } from '@/components/ui/spinner';
-import AuthLayout from '@/layouts/AuthLayout.vue';
+import InputError from '@/Components/InputError.vue';
+import { Button } from '@/Components/ui/button';
+import { Input } from '@/Components/ui/input';
+import { Label } from '@/Components/ui/label';
+import { Spinner } from '@/Components/ui/spinner';
+import AuthLayout from '@/Layouts/AuthLayout.vue';
 import { update } from '@/routes/password';
 
 const props = defineProps<{
