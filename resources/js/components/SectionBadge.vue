@@ -23,9 +23,18 @@ const IconComponent = computed(() => {
 </script>
 
 <template>
-    <div class="inline-flex w-fit items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3 py-1">
-        <component :is="IconComponent" :size="16" :fill="'currentColor'" class="text-primary-600 mt-0.5" />
+    <div
+        class="inline-flex w-fit items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3 py-1"
+    >
+        <component
+            :is="IconComponent"
+            :size="16"
+            :fill="'currentColor'"
+            class="text-primary-600 mt-0.5"
+        />
 
-        <span class="px-1 text-sm font-medium text-gray-700">{{ text || $slots.default?.()[0]?.children }}</span>
+        <span class="px-1 text-sm font-medium text-gray-700">{{
+            text || $slots.default?.()[0]?.children
+        }}</span>
     </div>
 </template>

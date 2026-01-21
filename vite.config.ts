@@ -1,8 +1,9 @@
+import { resolve } from 'node:path';
+
 import { wayfinder } from '@laravel/vite-plugin-wayfinder';
 import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 import laravel from 'laravel-vite-plugin';
-import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({

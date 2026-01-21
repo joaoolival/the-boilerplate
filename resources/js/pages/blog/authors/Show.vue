@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import BlogPostCard from '@/components/blog/BlogPostCard.vue';
-import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
-import Pagination from '@/components/Pagination.vue';
-import WebLayout from '@/layouts/WebLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { Inbox } from 'lucide-vue-next';
 import { computed } from 'vue';
@@ -13,8 +9,13 @@ import {
     XIcon,
 } from 'vue3-simple-icons';
 
-import type { Author, Post } from '@/types/models';
+import BlogPostCard from '@/components/blog/BlogPostCard.vue';
+import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
+import Pagination from '@/components/Pagination.vue';
+import WebLayout from '@/layouts/WebLayout.vue';
 import type { PaginatedCollection } from '@/types/pagination';
+
+import type { Author, Post } from '@/types/models';
 
 const props = defineProps<{
     author: Author | { data: Author };

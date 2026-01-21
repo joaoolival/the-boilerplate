@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import BlogHeroTitle from '@/components/blog/BlogHeroTitle.vue';
-import CategoryCard from '@/components/blog/CategoryCard.vue';
-import Pagination from '@/components/Pagination.vue';
-import WebLayout from '@/layouts/WebLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { Inbox } from 'lucide-vue-next';
 import { computed } from 'vue';
 
-import type { Category } from '@/types/models';
+import BlogHeroTitle from '@/components/blog/BlogHeroTitle.vue';
+import CategoryCard from '@/components/blog/CategoryCard.vue';
+import Pagination from '@/components/Pagination.vue';
+import WebLayout from '@/layouts/WebLayout.vue';
 import type { PaginatedCollection } from '@/types/pagination';
+
+import type { Category } from '@/types/models';
 
 const props = defineProps<{
     categories: Category[] | PaginatedCollection<Category>;

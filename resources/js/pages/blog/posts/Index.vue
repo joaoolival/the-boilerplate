@@ -1,35 +1,20 @@
 <script setup lang="ts">
+import { Head, Link } from '@inertiajs/vue3';
+import { ArrowRight, Inbox } from 'lucide-vue-next';
+
 import BlogHeroTitle from '@/components/blog/BlogHeroTitle.vue';
 import BlogPostCard from '@/components/blog/BlogPostCard.vue';
 import FeaturedPostCard from '@/components/blog/FeaturedPostCard.vue';
 import Pagination from '@/components/Pagination.vue';
 import SectionBadge from '@/components/SectionBadge.vue';
 import WebLayout from '@/layouts/WebLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
-import { ArrowRight, Inbox } from 'lucide-vue-next';
+import type { PaginatedCollection } from '@/types/pagination';
 
 import type { Post } from '@/types/models';
-import type { PaginatedCollection } from '@/types/pagination';
 
 defineProps<{
     posts: PaginatedCollection<Post>;
 }>();
-
-const formatDate = (dateString: string | null) => {
-    if (!dateString) return null;
-    return new Date(dateString).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    });
-};
-
-const readingTime = (content: string | null) => {
-    if (!content) return '2 min';
-    const words = content.replace(/<[^>]*>/g, '').split(/\s+/).length;
-    const minutes = Math.ceil(words / 200);
-    return `${minutes} min read`;
-};
 </script>
 
 <template>

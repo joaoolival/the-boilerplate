@@ -1,14 +1,4 @@
 <script setup lang="ts">
-import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
-
-import {
-    Dialog,
-    DialogClose,
-    DialogContent,
-    DialogDescription,
-    DialogTitle,
-} from '@/components/ui/dialog';
-import WebLayout from '@/layouts/WebLayout.vue';
 import { Head, Link, usePage } from '@inertiajs/vue3';
 import {
     ArrowLeft,
@@ -25,6 +15,16 @@ import {
     InstagramIcon,
     XIcon,
 } from 'vue3-simple-icons';
+
+import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogTitle,
+} from '@/components/ui/dialog';
+import WebLayout from '@/layouts/WebLayout.vue';
 
 import type { Post } from '@/types/models';
 

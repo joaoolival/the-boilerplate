@@ -1,15 +1,4 @@
 <script setup lang="ts">
-import LandingNav from '@/components/LandingNav.vue';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from '@/components/ui/card';
-import WebLayout from '@/layouts/WebLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import {
     ArrowRight,
@@ -21,6 +10,18 @@ import {
     Sparkles,
     Zap,
 } from 'lucide-vue-next';
+
+import LandingNav from '@/components/LandingNav.vue';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card';
+import WebLayout from '@/layouts/WebLayout.vue';
 
 defineProps<{
     canLogin?: boolean;
