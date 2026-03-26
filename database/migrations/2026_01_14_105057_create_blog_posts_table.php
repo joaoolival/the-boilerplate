@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blog_posts', function (Blueprint $table) {
+        Schema::create('blog_posts', function (Blueprint $table): void {
             $table->id();
             $table->string('title');
             $table->boolean('is_visible')->default(true);
