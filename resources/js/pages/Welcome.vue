@@ -85,24 +85,21 @@ defineProps<{
                         </p>
 
                         <div
-                            class="flex flex-col items-center justify-center gap-4 sm:flex-row"
+                            class="flex flex-col items-center justify-center gap-3 sm:flex-row"
                         >
-                            <Button
-                                size="lg"
-                                class="group h-14 rounded-full bg-black px-10 text-base font-semibold text-white transition-all duration-300 hover:bg-black/90 hover:shadow-2xl hover:shadow-black/20"
+                            <button
+                                class="group inline-flex h-11 items-center justify-center rounded-lg bg-black px-6 text-sm font-medium text-white transition-colors hover:bg-black/85"
                             >
                                 Get Started
                                 <ArrowRight
-                                    class="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+                                    class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5"
                                 />
-                            </Button>
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                class="h-14 rounded-full border-2 border-black/20 px-10 text-base font-semibold text-black transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
+                            </button>
+                            <button
+                                class="inline-flex h-11 items-center justify-center rounded-lg border border-black/15 bg-white px-6 text-sm font-medium text-black transition-colors hover:border-black hover:bg-black hover:text-white"
                             >
                                 Documentation
-                            </Button>
+                            </button>
                         </div>
 
                         <div
